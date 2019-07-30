@@ -1,15 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import authTest from './Auth.js';
+import Login from './Modules/Login.js';
 
+class App extends Component {
+  auth = authTest;
 
-function App() {
-  return (
-    <div data-test="component-app">
-    <h1 data-test="counter-display">The counter is currently</h1> 
-    <button data-test="increment-button">Increment Counter</button>
-    </div>
-  );
+  render() {
+    return (
+      <div data-test="component-app">
+      <Login auth={this.auth} />
+      </div>
+    );
+  }
 }
 
 export default App;
